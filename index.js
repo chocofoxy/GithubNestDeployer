@@ -2,7 +2,7 @@ const app = require('express')()
 const { exec } = require('child_process');
 
 app.post('/deploy-nest', (req, res) => {
-    exec('cd /workspace/tynass-backend && git pull && npm install || true && npm run build > /build-error.logs || true && pm2 restart dist/main.js',
+    exec('cd /workspace/tynass-backend && git pull && npm install || true && npm run build > /build-error.logs || true && pm2 restart nest',
         (error, stdout, stderr) => {
             if (error) {
                 console.log('Redeployment nest failed:', Date.now())
