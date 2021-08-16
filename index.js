@@ -19,7 +19,7 @@ app.post('/deploy-nest', (req, res) => {
 })
 
 app.post('/deploy-next', (req, res) => {
-    exec('cd /workspace/tynass-office && git pull && npm install || true && pm2 restart nextjs',
+    exec('cd /workspace/tynass-office && git pull && pm2 restart nextjs',
         (error, stdout, stderr) => {
             if (error) {
                 console.log('Redeployment next failed:', Date.now())
