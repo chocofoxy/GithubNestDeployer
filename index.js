@@ -19,6 +19,7 @@ app.post('/deploy-nest', (req, res) => {
 })
 
 app.post('/deploy-next', (req, res) => {
+    console.log(req.body)
     exec('cd /workspace/tynass-office && git pull && pm2 restart nextjs',
         (error, stdout, stderr) => {
             if (error) {
